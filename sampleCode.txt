@@ -1,0 +1,91 @@
+
+/**
+*Variable and data Types
+*/
+
+void main() {
+  int age=30;
+  print(age);
+  String name = "Jack";
+  name = "Jack Dame";
+  print(name);
+  
+  
+ //Dynamic Variables
+  dynamic dynamicName = "Rodger";
+  dynamicName = 23;
+  print(dynamicName);
+}
+
+
+/**
+* Method/Function call
+*/
+
+
+void main() {
+
+  String greet = greeting();
+  int age = getAge();
+  
+  print(greet);
+  print(age);
+
+}
+
+
+String greeting() => "hello";
+int getAge() => 30;
+
+
+
+/**
+* List
+*/
+
+  List names = ['Sam','Jack','Tim'];
+  
+  names.add('Drek');
+  names.remove('Tim');
+  names.add(23);
+  print(names);
+  
+  List<String> heroes = ['Iron Man','Thor','Captain America'];
+  //heroes.add(12); //Here it will throw error, as generic type is defined
+  print(heroes);
+  
+  
+/** 
+* Class and object
+*/  
+  
+  
+  void main() {
+ 
+
+  User userOne = User("Trex",21);
+  print(userOne.userName);
+  userOne.login();
+
+  User userTwo = User("Mark",33);
+  print(userTwo.userName);
+}
+        
+        
+class User {
+  
+  String userName;
+  int age;
+  
+  User (String username, int age) {
+   this.userName = username;
+   this.age = age;
+  }
+  
+  void login(){
+    print('user logged in');
+  }
+}
+  
+  
+

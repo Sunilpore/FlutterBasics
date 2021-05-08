@@ -69,13 +69,19 @@ int getAge() => 30;
 
   User userTwo = User("Mark",33);
   print(userTwo.userName);
+    
+  SuperUser userThree = SuperUser('Dame',34);
+  print(userThree.userName);
+  userThree.publish(); 
+  userThree.login();  
+    
 }
         
         
 class User {
   
-  String userName;
-  int age;
+  String userName="";
+  int age=0;
   
   User (String username, int age) {
    this.userName = username;
@@ -84,6 +90,15 @@ class User {
   
   void login(){
     print('user logged in');
+  }
+}
+
+class SuperUser extends User {
+  
+  SuperUser(String username, int age): super(username, age);
+  
+  void publish(){
+    print('published update');
   }
 }
   

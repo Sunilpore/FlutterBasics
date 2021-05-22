@@ -14,3 +14,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+# Topics:-
+1. Scaffold
+-https://api.flutter.dev/flutter/material/Scaffold-class.html
+2. Add fonts and colors to views
+-change made pubspec.yaml for fonts

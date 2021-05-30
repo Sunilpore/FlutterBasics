@@ -20,3 +20,4 @@ samples, guidance on mobile development, and a full API reference.
 -https://api.flutter.dev/flutter/material/Scaffold-class.html
 2. Add fonts and colors to views
 -change made pubspec.yaml for fonts
+3. Add Stateles widget class for Hot Reload

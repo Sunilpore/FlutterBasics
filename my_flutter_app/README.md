@@ -21,3 +21,5 @@ samples, guidance on mobile development, and a full API reference.
 2. Add fonts and colors to views
 -change made pubspec.yaml for fonts
 3. Add Stateles widget class for Hot Reload
+
+4. Load image into imageview via asset and network url

@@ -2,31 +2,17 @@ import 'package:flutter/material.dart';
 
 void main() =>
   runApp(MaterialApp(
-    home: HomeImgeWidget(),
+    home: IconButtonDemo(),
   ));
 
+//-------------------------------------------------//
+              //Image Buttons and Icons//
+//-------------------------------------------------//
 
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Welcome to Your Home',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome to Flutter'),
-        ),
-        body: Center(
-          child: Text('Hello World'),
-        ),
-      ),
-    );
-  }
-}
-
-
-
-class Home extends StatelessWidget {
+/**
+ * Load only ICON like normal image
+ */
+class ImageIconDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -37,15 +23,10 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.red[600],
       ),
       body: Center(
-        child: Text(
-            'Hello Dev',
-            style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 2.0,
-              color: Colors.grey[600],
-              fontFamily: "Pattaya",
-            )
+        child: Icon(
+          Icons.account_balance,
+          color: Colors.blue ,
+          size: 50.0,
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -58,7 +39,110 @@ class Home extends StatelessWidget {
 }
 
 
-class HomeImgeWidget extends StatelessWidget {
+/**
+ * Load ICON over a clickable button
+ */
+class IconButtonDemo extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My First App'),
+        centerTitle: true,
+        backgroundColor: Colors.red[600],
+      ),
+      body: Center(
+        child: IconButton(
+            onPressed: (){
+              print("you clicked Icon button");
+            },
+            icon: Icon(Icons.account_balance),
+            color: Colors.lightBlue,
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Text('Click'),
+        backgroundColor: Colors.red[600],
+      ),
+    );
+  }
+}
+
+/**
+ * Load ICON along with Custom Text on a clickable Button
+ */
+class ImageIconButtonDemo extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My First App'),
+        centerTitle: true,
+        backgroundColor: Colors.red[600],
+      ),
+      body: Center(
+        child: RaisedButton.icon(
+            onPressed:(){
+              print("you clicked Image Icon button");
+            },
+          icon: Icon(
+            Icons.account_balance
+          ),
+          label: Text("Institute"),
+          color: Colors.lightBlue,)
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Text('Click'),
+        backgroundColor: Colors.red[600],
+      ),
+    );
+  }
+}
+
+
+//-------------------------------------------------//
+            //Previous Code//
+//-------------------------------------------------//
+
+
+/**
+ * Load Custom font style to Text via font assets
+ */
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Welcome to Your Home',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Welcome to Flutter'),
+        ),
+        body: Center(
+          child: Text(
+              'Hello Dev',
+              style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 2.0,
+                color: Colors.grey[600],
+                fontFamily: "Pattaya",
+              )
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+/**
+ * Load URL and asset Image Into The imageview
+ */
+class HomeImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {

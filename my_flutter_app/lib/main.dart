@@ -2,8 +2,70 @@ import 'package:flutter/material.dart';
 
 void main() =>
   runApp(MaterialApp(
-    home: IconButtonDemo(),
+    home: ContainerDemo(),
   ));
+
+
+//-------------------------------------------------//
+//Container, Margin and Padding//
+//-------------------------------------------------//
+
+/**
+ * If we use empty container then it well occupy entire avlaible space,
+ * else if we apply any child component inside container like Text then it will take space around TextView only
+ */
+class ContainerDemo extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My First App'),
+        centerTitle: true,
+        backgroundColor: Colors.red[600],
+      ),
+      body: Container(
+        margin: EdgeInsets.symmetric(vertical: 10.0,horizontal: 20.0),
+        padding: EdgeInsets.fromLTRB( 10.0, 20.0, 30.0, 40.0),
+        color: Colors.grey[400],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Text('Click'),
+        backgroundColor: Colors.red[600],
+      ),
+    );
+  }
+}
+
+/**
+ * If single element need padding then we can use paddingLayout instead of Container,
+ * but we can't use margin params inside PaddingLayout.
+ * If we want to use margin then need to use Container
+ */
+class PaddingWidgetDemo extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My First App'),
+        centerTitle: true,
+        backgroundColor: Colors.red[600],
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(10.0),
+        child: Text("Welcome"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Text('Click'),
+        backgroundColor: Colors.red[600],
+      ),
+    );
+  }
+}
+
 
 //-------------------------------------------------//
               //Image Buttons and Icons//

@@ -32,3 +32,5 @@ Here is new Image Button and Icons available,
  RaisedButton (Deprecated) and ElevatedButton (New)
  FlatButton (Deprecated) vs TextButton (New)
  OutlineButton (Deprecated) vs OutlinedButton (New)
+
+6. Use Container, margin, padding

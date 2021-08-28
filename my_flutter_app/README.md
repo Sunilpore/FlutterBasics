@@ -34,3 +34,5 @@ Here is new Image Button and Icons available,
  OutlineButton (Deprecated) vs OutlinedButton (New)
 
 6. Use Container, margin, padding
+
+7. Add Row Widget

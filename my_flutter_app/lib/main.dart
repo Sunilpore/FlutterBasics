@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 void main() =>
   runApp(MaterialApp(
-    home: RowWidgetDemo(),
+    home: ColumnWidgetDemo(),
   ));
 
 //-------------------------------------------------//
@@ -11,7 +11,62 @@ void main() =>
 //-------------------------------------------------//
 
 /**
+ * Add views inside Column widget
+ * Here,vertical y-axis consider as a mainAxisAlignment and
+ * horizontal x-axis consider as a crossAxisAlignment
+ */
+class ColumnWidgetDemo extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My First App'),
+        centerTitle: true,
+        backgroundColor: Colors.red[600],
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+
+          Row(
+            children: [
+              Text("Welcome",),
+              Text("To Widgets")
+            ],
+          ),
+
+          Container(
+            padding: EdgeInsets.all(10.0),
+            color: Colors.cyan,
+            child: Text("One"),
+          ),
+          Container(
+            padding: EdgeInsets.all(20.0),
+            color: Colors.deepOrange,
+            child: Text("Two"),
+          ),
+          Container(
+            padding: EdgeInsets.all(30.0),
+            color: Colors.amber,
+            child: Text("Three"),
+          )
+          ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Text('Click'),
+        backgroundColor: Colors.red[600],
+      ),
+    );
+  }
+}
+
+/**
  * Add views inside Row widget
+ * Here,horizontal x-axis consider as a mainAxisAlignment and
+ * vertical y-axis consider as a crossAxisAlignment
  */
 class RowWidgetDemo extends StatelessWidget {
 
@@ -48,7 +103,6 @@ class RowWidgetDemo extends StatelessWidget {
     );
   }
 }
-
 
 
 //-------------------------------------------------//

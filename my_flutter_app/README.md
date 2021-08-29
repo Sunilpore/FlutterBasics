@@ -15,6 +15,11 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+//-------------------------------------------------------------------------------//
+Shortcuts
+1. CNTL+Q -> to check different colors contrast of color
+//-------------------------------------------------------------------------------//
+
 # Topics:-
 1. Scaffold
 -https://api.flutter.dev/flutter/material/Scaffold-class.html
@@ -35,4 +40,8 @@ Here is new Image Button and Icons available,
 
 6. Use Container, margin, padding
 
-7. Add Row Widget
+7. Add Row Widget and Column Widget
+   - In Row,horizontal x-axis consider as a mainAxisAlignment and
+     vertical y-axis consider as a crossAxisAlignment
+   - In Column ,vertical y-axis consider as a mainAxisAlignment and
+     horizontal x-axis consider as a crossAxisAlignment

@@ -3,8 +3,74 @@ import 'package:flutter/material.dart';
 
 void main() =>
   runApp(MaterialApp(
-    home: ColumnWidgetDemo(),
+    home: ExpandedWidgetDemo(),
   ));
+
+
+//-------------------------------------------------//
+//Expanded Widgets//
+//-------------------------------------------------//
+
+/**
+ * Here we use Expanded as a new Widget like a Container
+ * It is similar to FlexBox in web and LinearLayout in Native Android
+ * @param flex-> use to define width of an ExpandED Widget
+ */
+class ExpandedWidgetDemo extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My First App'),
+        centerTitle: true,
+        backgroundColor: Colors.red[600],
+      ),
+      body: Row(
+        children: [
+
+          Expanded(
+              flex: 2,
+              child: Image.asset("assets/space-1.jpg")
+          ),
+          
+          Expanded(
+            flex: 3,
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.cyan,
+              child: Text("1"),
+            ),
+          ),
+
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.deepOrange,
+              child: Text("2"),
+            ),
+          ),
+
+
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.amber,
+              child: Text("3"),
+            ),
+          )
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Text('Click'),
+        backgroundColor: Colors.red[600],
+      ),
+    );
+  }
+}
 
 //-------------------------------------------------//
 //Rows and Columns//

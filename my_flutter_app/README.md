@@ -25,7 +25,7 @@ Shortcuts
 -https://api.flutter.dev/flutter/material/Scaffold-class.html
 2. Add fonts and colors to views
 -change made pubspec.yaml for fonts
-3. Add Stateles widget class for Hot Reload
+3. Add Stateless widget class for Hot Reload
 
 4. Load image into imageview via asset and network url
 
@@ -45,3 +45,6 @@ Here is new Image Button and Icons available,
      vertical y-axis consider as a crossAxisAlignment
    - In Column ,vertical y-axis consider as a mainAxisAlignment and
      horizontal x-axis consider as a crossAxisAlignment
+
+8. Add Expanded Widget
+  It is similar to FlexBox in web and LinearLayout in Native Android

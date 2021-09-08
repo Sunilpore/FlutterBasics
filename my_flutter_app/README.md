@@ -48,3 +48,6 @@ Here is new Image Button and Icons available,
 
 8. Add Expanded Widget
   It is similar to FlexBox in web and LinearLayout in Native Android
+
+9. User Card Project
+  - Add CircleAvatar, Sizebox, Divider widget

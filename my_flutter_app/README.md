@@ -17,37 +17,9 @@ samples, guidance on mobile development, and a full API reference.
 
 //-------------------------------------------------------------------------------//
 Shortcuts
-1. CNTL+Q -> to check different colors contrast of color
+. CNTL+Q -> to check different colors contrast of color
 //-------------------------------------------------------------------------------//
 
-# Topics:-
-1. Scaffold
--https://api.flutter.dev/flutter/material/Scaffold-class.html
-2. Add fonts and colors to views
--change made pubspec.yaml for fonts
-3. Add Stateless widget class for Hot Reload
-
-4. Load image into imageview via asset and network url
-
-
-5. Image and Icons
- https://stackoverflow.com/a/66794518
-
-Here is new Image Button and Icons available,
- RaisedButton (Deprecated) and ElevatedButton (New)
- FlatButton (Deprecated) vs TextButton (New)
- OutlineButton (Deprecated) vs OutlinedButton (New)
-
-6. Use Container, margin, padding
-
-7. Add Row Widget and Column Widget
-   - In Row,horizontal x-axis consider as a mainAxisAlignment and
-     vertical y-axis consider as a crossAxisAlignment
-   - In Column ,vertical y-axis consider as a mainAxisAlignment and
-     horizontal x-axis consider as a crossAxisAlignment
-
-8. Add Expanded Widget
-  It is similar to FlexBox in web and LinearLayout in Native Android
-
-9. User Card Project
+1. User Card Project
   - Add CircleAvatar, Sizebox, Divider widget
+  - add stateful widget

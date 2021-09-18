@@ -20,6 +20,6 @@ Shortcuts
 . CNTL+Q -> to check different colors contrast of color
 //-------------------------------------------------------------------------------//
 
-1. User Card Project
-  - Add CircleAvatar, Sizebox, Divider widget
-  - add stateful widget
+1. ComicList
+  - Use list, add map() operator
+  - Create Custom class

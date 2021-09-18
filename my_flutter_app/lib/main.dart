@@ -1,112 +1,39 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_flutter_app/Comic.dart';
 
 void main() =>
   runApp(MaterialApp(
-    home: UserCard()
+    home: ComicsList()
   ));
 
 //UserCard Project
 
-class UserCard extends StatefulWidget {
+class ComicsList extends StatefulWidget {
 
   @override
-  _UserCardState createState() => _UserCardState();
+  _ComicsListState createState() => _ComicsListState();
 }
 
-class _UserCardState extends State<UserCard> {
+class _ComicsListState extends State<ComicsList> {
 
-  int progressLevel=0;
+  List<Comic> quotes = [
+    Comic(comicUniverse: "Marvel", characterName: "Captain America"),
+    Comic(comicUniverse: "Marvel", characterName: "Iron Man"),
+    Comic(comicUniverse: "DC", characterName: "Batman"),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[900],
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text("User ID Card"),
+        title: Text("Awesome Quotes"),
         centerTitle: true,
-        backgroundColor: Colors.grey[850],
-        elevation: 0.0,
+        backgroundColor: Colors.redAccent,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          setState(() {
-            progressLevel +=1;
-          });
-        },
-        child: Icon(Icons.add),
-        backgroundColor: Colors.grey[850],
-      ),
-
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Center(
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/user2.png'),
-                radius: 40.0,
-              ),
-            ),
-            Divider(
-              height: 60.0,
-              color: Colors.grey[800],
-            ),
-            Text(
-                'Name',
-            style: TextStyle(
-              color: Colors.grey,
-              letterSpacing: 2.0,
-            ),),
-            SizedBox(height: 10.0,),
-            Text(
-              'Trick star',
-              style: TextStyle(
-                color: Colors.amberAccent[200],
-                letterSpacing: 2.0,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              ),),
-
-            SizedBox(height: 30.0),
-
-            Text(
-              'Current Level',
-              style: TextStyle(
-                color: Colors.grey,
-                letterSpacing: 2.0,
-              ),),
-            SizedBox(height: 10.0,),
-            Text(
-              '$progressLevel',
-              style: TextStyle(
-                color: Colors.amberAccent[200],
-                letterSpacing: 2.0,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              ),),
-
-            SizedBox(height: 30.0),
-
-            Row(
-              children: [
-                Icon(
-                  Icons.email,
-                  color: Colors.grey[400],
-                ),
-                SizedBox(width: 10.0,),
-                Text(
-                  'trick2star@trcik.co.in',
-                  style:TextStyle(
-                    color: Colors.grey[400],
-                    fontSize: 14.0,
-                    letterSpacing: 1.0,
-                  ) ,)
-              ],
-            )
-          ],
-        ),
+      body: Column(
+        children: quotes.map((comic) => Text('${comic.characterName} -> ${comic.characterName}')).toList(),
       ),
     );
   }

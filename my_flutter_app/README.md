@@ -21,5 +21,10 @@ Shortcuts
 //-------------------------------------------------------------------------------//
 
 1. ComicList
-  - Use list, add map() operator
-  - Create Custom class
+  I] Use list, add map() operator
+  II] Create Custom class
+
+  III] Card Widget:-
+  Add card widget
+  https://api.flutter.dev/flutter/material/Card-class.html
+  https://material.io/components/cards/flutter#using-cards

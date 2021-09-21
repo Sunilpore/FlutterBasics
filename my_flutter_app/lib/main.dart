@@ -17,11 +17,42 @@ class ComicsList extends StatefulWidget {
 
 class _ComicsListState extends State<ComicsList> {
 
-  List<Comic> quotes = [
+  List<Comic> comics = [
     Comic(comicUniverse: "Marvel", characterName: "Captain America"),
     Comic(comicUniverse: "Marvel", characterName: "Iron Man"),
     Comic(comicUniverse: "DC", characterName: "Batman"),
   ];
+
+  Widget comicTemplate(Comic comic){
+    return Card(
+      margin: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              comic.characterName,
+              style: TextStyle(
+                fontSize: 18.0,
+                color: Colors.grey[600]
+              ),
+            ),
+
+            SizedBox(height: 6.0,),
+
+            Text(
+              comic.comicUniverse,
+              style: TextStyle(
+                fontSize: 14.0,
+                color: Colors.grey[800]
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +64,7 @@ class _ComicsListState extends State<ComicsList> {
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        children: quotes.map((comic) => Text('${comic.characterName} -> ${comic.characterName}')).toList(),
+        children: comics.map((comic) => comicTemplate(comic)).toList(),
       ),
     );
   }

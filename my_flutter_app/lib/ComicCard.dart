@@ -6,8 +6,9 @@ import 'package:my_flutter_app/Comic.dart';
 class ComicCard extends StatelessWidget {
 
   final Comic comic;
+  final Function delete;
 
-  ComicCard({this.comic});
+  ComicCard({this.comic, this.delete});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,14 @@ class ComicCard extends StatelessWidget {
                   fontSize: 14.0,
                   color: Colors.grey[800]
               ),
-            )
+            ),
+
+            SizedBox(height: 8.0),
+
+            TextButton.icon(
+              onPressed: delete,
+              label: Text('delete quote'),
+              icon: Icon(Icons.delete),)
           ],
         ),
       ),

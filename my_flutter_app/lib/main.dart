@@ -34,7 +34,14 @@ class _ComicsListState extends State<ComicsList> {
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        children: comics.map((comic) => ComicCard(comic: comic)).toList(),
+        children: comics.map((comic) => ComicCard(
+          comic: comic,
+          delete: (){
+            setState(() {
+              comics.remove(comic);
+            });
+          },
+        )).toList(),
       ),
     );
   }

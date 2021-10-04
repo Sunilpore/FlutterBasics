@@ -20,6 +20,8 @@ Shortcuts
 . CNTL+Q -> to check different colors contrast of color
 //-------------------------------------------------------------------------------//
 
+
+
 1.Add SafeArea Widget
 https://api.flutter.dev/flutter/widgets/SafeArea-class.html
 https://stackoverflow.com/questions/49227667/using-safearea-in-flutter

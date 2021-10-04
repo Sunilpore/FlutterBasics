@@ -20,11 +20,11 @@ Shortcuts
 . CNTL+Q -> to check different colors contrast of color
 //-------------------------------------------------------------------------------//
 
-1. ComicList
-  I] Use list, add map() operator
-  II] Create Custom class
+1.Add SafeArea Widget
+https://api.flutter.dev/flutter/widgets/SafeArea-class.html
+https://stackoverflow.com/questions/49227667/using-safearea-in-flutter
 
-  III] Card Widget:-
-  Add card widget
-  https://api.flutter.dev/flutter/material/Card-class.html
-  https://material.io/components/cards/flutter#using-cards
+2. Routes and Map, Navigator
+  I] Routes -> Used to decide launching navigator flow of an screen
+  II] Map -> consist of key,value pair. See example in route
+  III] Navigator -> use to navigate from one widget screen to other screen

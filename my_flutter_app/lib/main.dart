@@ -1,11 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_flutter_app/Comic.dart';
+import 'package:my_flutter_app/pages/choosing_location.dart';
+import 'package:my_flutter_app/pages/home.dart';
+import 'package:my_flutter_app/pages/loading.dart';
 import 'ComicCard.dart';
 
 void main() =>
   runApp(MaterialApp(
-    home: ComicsList()
+    initialRoute: '/home',
+    routes: {
+      '/': (context) => Loading(),
+      '/home': (context) => Home(),
+      '/location': (context) => ChooseLocation(),
+    },
   ));
 
 //UserCard Project

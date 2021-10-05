@@ -30,3 +30,12 @@ https://stackoverflow.com/questions/49227667/using-safearea-in-flutter
   I] Routes -> Used to decide launching navigator flow of an screen
   II] Map -> consist of key,value pair. See example in route
   III] Navigator -> use to navigate from one widget screen to other screen
+
+3.  Widget Lifecycle
+  I] initState -> Called only once when the widget is created
+                  Subscribe to streams or any object that could change our widget data
+
+  II] build -> Builds the widget tree
+               A build is triggered every time we use setState()
+
+  III] dispose -> Called only when the widget/state object is removed

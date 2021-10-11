@@ -39,3 +39,5 @@ https://stackoverflow.com/questions/49227667/using-safearea-in-flutter
                A build is triggered every time we use setState()
 
   III] dispose -> Called only when the widget/state object is removed
+
+4. Async and await function

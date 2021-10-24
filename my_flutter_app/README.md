@@ -20,7 +20,8 @@ Shortcuts
 . CNTL+Q -> to check different colors contrast of color
 //-------------------------------------------------------------------------------//
 
-
+Reference Author Project Github code
+https://github.com/iamshaunjp/flutter-beginners-tutorial
 
 1.Add SafeArea Widget
 https://api.flutter.dev/flutter/widgets/SafeArea-class.html
@@ -41,3 +42,12 @@ https://stackoverflow.com/questions/49227667/using-safearea-in-flutter
   III] dispose -> Called only when the widget/state object is removed
 
 4. Async and await function
+
+    //Dart library packages
+    https://pub.dev/packages/http
+
+    //free sample apis to test api call
+    https://jsonplaceholder.typicode.com/
+
+    //World Timer API
+    http://worldtimeapi.org/pages/examples

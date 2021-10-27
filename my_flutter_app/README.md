@@ -51,3 +51,7 @@ https://stackoverflow.com/questions/49227667/using-safearea-in-flutter
 
     //World Timer API
     http://worldtimeapi.org/pages/examples
+
+5. Code segregation
+  - Add service packages for api call
+  - Use Future scope to retrieve async response via variable

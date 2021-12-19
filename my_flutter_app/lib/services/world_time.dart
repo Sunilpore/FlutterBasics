@@ -3,6 +3,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
+import 'package:intl/intl.dart';
 
 class WorldTime {
 
@@ -42,7 +43,8 @@ class WorldTime {
       print(currentDateTime);
 
       //set time property
-      time = currentDateTime.toString();
+      //time = currentDateTime.toString();
+      time = DateFormat.jm().format(currentDateTime);
     }catch(e){
       print("network api err: $e");
       time = "Unable to load data, please try again";

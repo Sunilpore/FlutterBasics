@@ -58,3 +58,7 @@ https://stackoverflow.com/questions/49227667/using-safearea-in-flutter
 
 6. Add Navigator
   - used pushedName, pushReplacementNamed and also passed the arguments
+
+7. Date Format Library
+  - Integrate dateformat library to display date in user friendly dateformat
+  - Display passed argument data on Home Widget

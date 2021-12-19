@@ -17,31 +17,37 @@ class WorldTime {
 
   Future<void> getRealTime() async {
 
-    //Uri uri = Uri.parse('http://worldtimeapi.org/api/timezone/Europe/London');
-    Uri uri = Uri.parse('https://worldtimeapi.org/api/timezone/$url');
-    Response response = await get(uri);
+    try {
+      //Uri uri = Uri.parse('http://worldtimeapi.org/api/timezone/Europe/London');
+      Uri uri = Uri.parse('http://worldtimeapi.org/api/timezone/$url');
+      Response response = await get(uri);
 
-    //print('Response status: ${response.statusCode}');
-    //print('Response body: ${response.body}');
+      //print('Response status: ${response.statusCode}');
+      //print('Response body: ${response.body}');
 
-    Map mapRespData = jsonDecode(response.body);
-    print('Response body: ${mapRespData}');
+      Map mapRespData = jsonDecode(response.body);
+      print('Response body: ${mapRespData}');
 
-    String dateTime = mapRespData['datetime'];
-    String offset = mapRespData['utc_offset'].substring(1,3);
-    //print('datetime: $dateTime');
-    print('offset: $offset');
+      String dateTime = mapRespData['datetime'];
+      String offset = mapRespData['utc_offset'].substring(1,3);
+      //print('datetime: $dateTime');
+      print('offset: $offset');
 
-    //create date-time object
-    DateTime currentDateTime = DateTime.parse(dateTime);
+      //create date-time object
+      DateTime currentDateTime = DateTime.parse(dateTime);
 
-    //Here if we don't assign currentDateTime to itself, then it will give me some lag of tracking error as it is non-destructive and not update directly.
-    //Show 1-2 hours back then actual time
-    currentDateTime = currentDateTime.add(Duration(hours: int.parse(offset)));
-    print(currentDateTime);
+      //Here if we don't assign currentDateTime to itself, then it will give me some lag of tracking error as it is non-destructive and not update directly.
+      //Show 1-2 hours back then actual time
+      currentDateTime = currentDateTime.add(Duration(hours: int.parse(offset)));
+      print(currentDateTime);
 
-    //set time property
-    time = currentDateTime.toString();
+      //set time property
+      time = currentDateTime.toString();
+    }catch(e){
+      print("network api err: $e");
+      time = "Unable to load data, please try again";
+    }
+
   }
 
 

@@ -66,3 +66,7 @@ https://stackoverflow.com/questions/49227667/using-safearea-in-flutter
 
    II] Spinkit Loader
     - Add spinner while fetching data
+
+8. Add BoxDecoration and Ternary operator
+    - Used ternary operator for day/night logic
+    - Add BoxDecoration inside Container

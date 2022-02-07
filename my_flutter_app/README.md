@@ -70,3 +70,6 @@ https://stackoverflow.com/questions/49227667/using-safearea-in-flutter
 8. Add BoxDecoration and Ternary operator
     - Used ternary operator for day/night logic
     - Add BoxDecoration inside Container
+
+9. ListTiles
+    - Add ListTiles widgets to display list items

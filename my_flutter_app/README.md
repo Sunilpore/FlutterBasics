@@ -58,6 +58,7 @@ https://stackoverflow.com/questions/49227667/using-safearea-in-flutter
 
 6. Add Navigator
   - used pushedName, pushReplacementNamed and also passed the arguments
+  - Use pop stack method
 
 7. Add Libraries
   I] Date Format Library

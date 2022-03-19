@@ -1,5 +1,8 @@
 
 
+import 'dart:convert';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:my_flutter_app/services/world_time.dart';
 
@@ -24,6 +27,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
     WorldTime(url: 'Asia/Jakarta', location: 'Jakarta', flag: 'indonesia.png'),
   ];
 
+
   void getData() async {
 
     //simulate network request for a character name
@@ -37,6 +41,25 @@ class _ChooseLocationState extends State<ChooseLocation> {
     });
     
     print('statement $userName $bio');
+  }
+
+  void updateTime(index) async {
+    WorldTime instance = locations[index];
+    await instance.getRealTime();
+
+    print('location : ${instance.location}');
+    print('time : ${instance.time}');
+    print('dayTime : ${instance.isDayTime}');
+    print('flag : ${instance.flag}');
+    print('url : ${instance.url}');
+
+    //Navigate to Home screen
+    Navigator.pop(context, {
+      'location': instance.location,
+      'flag' : instance.flag,
+      'time': instance.time,
+      'isDayTime':instance.isDayTime,
+    });
   }
 
   @override
@@ -65,7 +88,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
               child: Card(
                 child: ListTile (
                   onTap: () {
-                    print('location : ${locations[index].location}');
+                    updateTime(index);
                   },
                   title: Text(locations[index].location),
                   leading: CircleAvatar(

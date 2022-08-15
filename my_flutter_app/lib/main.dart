@@ -28,6 +28,13 @@ class _CounterState extends State<CounterWidget> {
   }
 
   @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    counterBloc.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
@@ -43,10 +50,26 @@ class _CounterState extends State<CounterWidget> {
               stream: counterBloc.counterStream,
               initialData: 0,
               builder:  (context, snapshot) {
+
+                //Check sanpshot has data
+                if(snapshot.hasData)
                 return Text('Counter value is ${snapshot.data}',
                 style: Theme.of(context).textTheme.headline2,);
+
+                //Check snapshot connection state to perform particular events
+                if(snapshot.connectionState == ConnectionState.waiting){
+                  print("Progress Intiatiated...");}
+                if(snapshot.connectionState == ConnectionState.active){
+                  print("In progress");}
+                if(snapshot.connectionState == ConnectionState.done){
+                  print("Progress done");}
+
+                //Check snapshot error state
+                if(snapshot.hasError) {
+                  print(snapshot.hasError);
+                }
               },
-              ),
+            ),
         ],
 
       ),

@@ -9,4 +9,7 @@ A new Flutter application.
   II] Sink
   III] Stream
   IV] Stream Listener
+  V] Add snapshot error, connection states
+  VI] Add broadcast listener for streamController
+
 

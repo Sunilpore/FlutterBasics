@@ -9,7 +9,8 @@ class CounterBloc {
   
   int counter;
 
-  final _stateStreamController = StreamController<int>();
+  //Here we use Broadcast to listen in multiple places and to avoid stream listener issue
+  final _stateStreamController = StreamController<int>.broadcast();
   StreamSink<int> get counterSink => _stateStreamController.sink;
   Stream<int> get counterStream => _stateStreamController.stream;
 
@@ -21,7 +22,12 @@ class CounterBloc {
 
   CounterBloc() {
     counter = 0;
-    
+
+    //Here we listen broadcast messgae
+    counterStream.listen((event) {
+      print("broadcast msg: ${event.toString()}");
+    });
+
     eventStream.listen((event) {
       if(event == CounterAction.Increment) counter++;
       else if(event == CounterAction.Decrement) counter--;
@@ -31,5 +37,12 @@ class CounterBloc {
     });
     
   }
-  
+
+  //Use dispose() to move Stream-Controller object into garbej colleection once particular widget-lifecycle has been ended
+  void dispose() {
+    _stateStreamController.close();
+    _eventControllerStream.close();
+  }
+
+
 }

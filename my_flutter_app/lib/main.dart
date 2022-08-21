@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_app/CounterBloc.dart';
 
+import 'news_blog/news_page.dart';
+
 void main() =>
   runApp(MaterialApp(
-    home: CounterWidget()
+    home: NewsPage()
   ));
 
 

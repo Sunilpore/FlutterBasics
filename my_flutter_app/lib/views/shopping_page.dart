@@ -60,10 +60,17 @@ class ShoopingPage extends StatelessWidget {
                         });
                   }
                 )),
-            GetX<CartContorller>(builder: (controller) {
+            //Update "Total Amount" Using GetBuilder method
+            GetBuilder<CartContorller>(
+              builder: (controller) {
+                return Text('Total amount: \$ ${controller.testAmount}',
+                    style: TextStyle(fontSize: 32, color: Colors.white));
+              },
+            ),
+            /*GetX<CartContorller>(builder: (controller) {
               return Text('Total amount: \$ ${controller.totalPrice}',
-              style: TextStyle(fontSize: 32, color: Colors.white));
-            }),
+                  style: TextStyle(fontSize: 32, color: Colors.white));
+            }),*/
             SizedBox(height: 100)
           ],
         ),

@@ -17,4 +17,4 @@ A new Flutter application.
 
 #Update Note
 
-- Update widget value using GetXBuilder method
+- Update widget value using GetXBuilder, GetX, ObsX method

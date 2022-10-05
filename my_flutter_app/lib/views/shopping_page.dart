@@ -53,6 +53,13 @@ class ShoopingPage extends StatelessWidget {
                                       color: Colors.white,
                                     )),
                                 child: Text('Add to Cart')),
+                            Obx(() => IconButton(
+                              icon: controller.products[index].isFavorite.value?
+                              Icon(Icons.check_box_rounded): Icon(Icons.check_box_outline_blank_outlined),
+                              onPressed: () {
+                                controller.products[index].isFavorite.toggle();
+                              },
+                            ))
                           ],
                         ),
                       ),

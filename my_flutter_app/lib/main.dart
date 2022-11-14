@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_flutter_app/views/shopping_page.dart';
+import 'package:my_flutter_app/views/homepage.dart';
 
 void main() =>
   runApp(MaterialApp(
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity
       ),
-      home: ShoopingPage(),
+      home: HomePage(),
     );
   }
 }

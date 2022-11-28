@@ -1,8 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:get/get.dart';
+import 'package:my_flutter_app/controllers/productcontroller.dart';
+import 'package:my_flutter_app/views/product_tile.dart';
 
 class HomePage extends StatelessWidget {
+  final ProductController productController = Get.put(ProductController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,19 +39,23 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: StaggeredGridView.countBuilder(
-                crossAxisCount: 2,
-                itemCount: 100,
-                mainAxisSpacing: 16,
-                crossAxisSpacing: 10,
-                itemBuilder: (context, index) {
-                  return Container(
-                    width: 50,
-                    height: 50,
-                    color: Colors.amber,
-                  );
-                },
-                staggeredTileBuilder: (index) => StaggeredTile.fit(1)),
+            child: Obx(() {
+              //Show Loader
+              if (productController.isLoading.value) {
+                return Center(child: CircularProgressIndicator());
+              }
+              else {
+                //Hide the Loader, and show data
+                return AlignedGridView.count(
+                    crossAxisCount: 2,
+                    itemCount: productController.productList.length,
+                    mainAxisSpacing: 16,
+                    crossAxisSpacing: 16,
+                    itemBuilder: (context, index) {
+                      return ProductTile(productController.productList[index]);
+                    });
+              }
+            }),
           )
         ],
       ),

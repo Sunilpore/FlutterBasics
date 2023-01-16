@@ -4,6 +4,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
 import 'package:my_flutter_app/controllers/productcontroller.dart';
 import 'package:my_flutter_app/views/product_tile.dart';
+import 'package:my_flutter_app/views/settings_page.dart';
 
 class HomePage extends StatelessWidget {
   final ProductController productController = Get.put(ProductController());
@@ -14,6 +15,22 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         leading: Icon(Icons.arrow_back),
+        actions: [
+          IconButton(
+            icon: Icon(
+                Icons.settings
+            ),
+            onPressed: (){
+              Get.to( () => SettingsPage());
+            },
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.shopping_cart
+            ),
+            onPressed: (){},
+          )
+        ],
       ),
       body: Column(
         children: [
